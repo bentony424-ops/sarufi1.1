@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects — Sarufi Energy Group Ltd</title>
+<meta name="description" content="Explore Sarufi Energy Group's clean energy and PET recycling projects across Kenya and the region.">
+<link rel="icon" type="image/png" href="assets/sarufi-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .project-card{
+    background:#fff; border:1px solid var(--line); border-radius: var(--radius-l);
+    overflow:hidden; box-shadow: var(--shadow-card); display:flex; flex-direction:column;
+  }
+  .project-card .pc-img{ position:relative; aspect-ratio:4/3; overflow:hidden; }
+  .project-card .pc-img img{ width:100%; height:100%; object-fit:cover; transition: transform .5s ease; }
+  .project-card:hover .pc-img img{ transform: scale(1.06); }
+  .project-card .pc-status{
+    position:absolute; top:16px; left:16px; z-index:2;
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase;
+    background: rgba(10,21,18,0.75); color: var(--circuit); padding:6px 12px; border-radius:999px;
+  }
+  .project-card .pc-body{ padding:26px 26px 30px; flex:1; display:flex; flex-direction:column; }
+  .project-card .pc-tag{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color: var(--sky); margin-bottom:10px; }
+  .project-card h4{ font-size:18px; font-weight:600; margin-bottom:10px; }
+  .project-card p{ font-size:14.5px; line-height:1.65; color: var(--slate); flex:1; }
+  .project-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:26px; }
+  @media (max-width:900px){ .project-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width:620px){ .project-grid{ grid-template-columns: 1fr; } }
+  .coming-soon-banner{
+    text-align:center; padding:56px 32px; border-radius: var(--radius-l);
+    background: var(--mist); border:1px dashed var(--line); margin-top:56px;
+  }
+  .coming-soon-banner h3{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .coming-soon-banner p{ color: var(--slate); max-width:52ch; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/sarufi-logo.png" alt="Sarufi Energy Group logo">
+      <span class="nav-logo-text">Sarufi Energy<span>IMAGINE TOMORROW</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="energy-services.html">Energy Management Services</a>
+      <a href="pet-recycling.html">PET Bottle Waste Recycling</a>
+      <a href="projects.html" class="active">Our Projects</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">Get in Touch</a>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="background-image:url('assets/solar-aerial.jpg');">
+  <div class="hero-scrim"></div>
+  <div class="container page-hero-inner">
+    <div class="crumb"><span class="loop-mark" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;"></span> Our Projects</div>
+    <h1>Proof the circle works, on the ground.</h1>
+    <p class="lead">From solar rollouts to PET recycling partnerships, here's a look at the work Sarufi has delivered with communities, counties and industry partners across the region.</p>
+  </div>
+</section>
+
+<!-- ===== PROJECTS GRID (placeholder) ===== -->
+<section class="section bg-paper">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="loop-mark"></span> Portfolio</div>
+      <h2>Featured projects.</h2>
+      <p>Full case studies for each project below are on the way — check back soon, or get in touch for details today.</p>
+    </div>
+
+    <div class="project-grid reveal">
+      <div class="project-card">
+        <div class="pc-img">
+          <span class="pc-status">Details coming soon</span>
+          <img src="assets/solar-aerial.jpg" alt="Solar energy project placeholder">
+        </div>
+        <div class="pc-body">
+          <span class="pc-tag">Energy Management</span>
+          <h4>Project Name Placeholder</h4>
+          <p>Location · Year — a short description of the project scope, partners involved, and impact will go here.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="pc-img">
+          <span class="pc-status">Details coming soon</span>
+          <img src="assets/recycling-plant-interior.jpg" alt="PET recycling project placeholder">
+        </div>
+        <div class="pc-body">
+          <span class="pc-tag">PET Recycling</span>
+          <h4>Project Name Placeholder</h4>
+          <p>Location · Year — a short description of the project scope, partners involved, and impact will go here.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="pc-img">
+          <span class="pc-status">Details coming soon</span>
+          <img src="assets/solar-streetlight.jpg" alt="Solar streetlight project placeholder">
+        </div>
+        <div class="pc-body">
+          <span class="pc-tag">Energy Management</span>
+          <h4>Project Name Placeholder</h4>
+          <p>Location · Year — a short description of the project scope, partners involved, and impact will go here.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coming-soon-banner reveal">
+      <h3>More projects on the way</h3>
+      <p>We're gathering photos, figures and stories from projects across our energy and recycling work. Send over the details whenever you're ready, and we'll turn this into a full portfolio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="section bg-paper">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cb-bg" style="background-image:url('assets/hero-recycling-bins.jpg');"></div>
+      <div class="cb-scrim"></div>
+      <div class="cb-body">
+        <div class="eyebrow on-dark"><span class="loop-mark"></span> Start a Project</div>
+        <h2>Have a project in mind for us?</h2>
+        <p>Whether it's energy, recycling, or both — let's talk about how Sarufi can help bring it to life.</p>
+      </div>
+      <div class="cb-actions">
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/sarufi-logo.png" alt="Sarufi Energy Group logo" style="height:44px;">
+          <span class="nav-logo-text">Sarufi Energy<span>IMAGINE TOMORROW</span></span>
+        </a>
+        <p>Championing clean energy and a circular economy across Kenya and the region — one community, one bottle, one kilowatt at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="energy-services.html">Energy Management Services</a>
+        <a href="pet-recycling.html">PET Bottle Waste Recycling</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">Vision &amp; Mission</a>
+        <a href="about.html#values">Our Values</a>
+        <a href="about.html#policy">Environmental Policy</a>
+        <a href="index.html#partners">Partners</a>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <p>Nyati Sacco Plaza<br>Madaraka Roundabout, Nairobi West<br>P.O. Box 27336 – 00100, Nairobi, Kenya</p>
+        <a href="tel:+254721158974">+254 721 158974</a>
+        <a href="mailto:info@sarufigroup.com">info@sarufigroup.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="cur-year">2026</span> Sarufi Energy Group Ltd. All rights reserved.</span>
+      <div class="footer-bottom-right">
+        <span>Built for a circular tomorrow.</span>
+        <span class="footer-credit">Site by <a href="mailto:bentony424@gmail.com">Tony Muriithi</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
