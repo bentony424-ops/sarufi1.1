@@ -272,10 +272,10 @@ p{ margin:0; }
    sending live current (animated dashed lines) to the home's lights, an
    EV charger and appliances, plus a battery bank for storage. */
 .power-flow-graphic{
-  position:absolute; right:3%; top:12%;
-  width:min(40vw, 500px);
+  position:absolute; right:2%; top:8%;
+  width:min(46vw, 560px);
   z-index:1;
-  opacity:0.95;
+  opacity:0.97;
   filter: drop-shadow(0 25px 60px rgba(0,0,0,0.4));
 }
 .power-flow-graphic svg{ width:100%; height:auto; overflow:visible; display:block; }
@@ -299,6 +299,9 @@ p{ margin:0; }
 .pfg-bulb-base{ fill: rgba(255,255,255,0.35); }
 @keyframes pfgBulbGlow{ 0%,100%{ opacity:0.72; } 50%{ opacity:1; } }
 
+.pfg-screen{ fill: rgba(38,217,184,0.45); animation: pfgBulbGlow 3.2s ease-in-out infinite; }
+.pfg-screen-stand{ fill: rgba(255,255,255,0.3); }
+
 .pfg-charger-post{ fill: rgba(255,255,255,0.14); stroke: var(--sky-light); stroke-width:2; }
 .pfg-charger-head{ fill: rgba(255,255,255,0.18); stroke: var(--sky-light); stroke-width:2; }
 .pfg-charger-led{ fill: var(--leaf-light); animation: pfgBulbGlow 1.6s ease-in-out infinite; }
@@ -307,17 +310,17 @@ p{ margin:0; }
 .pfg-car-wheel{ fill: var(--ink); }
 
 .pfg-sun{ fill: rgba(255,214,120,0.88); animation: pfgBulbGlow 3s ease-in-out infinite; }
-.pfg-sun-ray{ stroke: rgba(255,214,120,0.55); stroke-width:2; stroke-linecap:round; }
+.pfg-sun-ray{ stroke: rgba(255,214,120,0.55); stroke-width:2.5; stroke-linecap:round; }
 
-/* Flowing current lines: short dashes marching continuously along each wire */
+/* Flowing current lines: soft-glowing dashes marching continuously along each wire */
 .pfg-wire{ fill:none; stroke-width:3; stroke-linecap:round; }
-.pfg-wire-solar{ stroke: var(--leaf-light); stroke-dasharray: 9 8; animation: pfgFlow 0.9s linear infinite; }
-.pfg-wire-load{ stroke: var(--circuit); stroke-dasharray: 9 8; animation: pfgFlow 1.1s linear infinite; }
-.pfg-wire-ev{ stroke: var(--sky-light); stroke-dasharray: 9 8; animation: pfgFlow 0.85s linear infinite; }
+.pfg-wire-solar{ stroke: var(--leaf-light); stroke-dasharray: 9 8; animation: pfgFlow 0.9s linear infinite; filter: drop-shadow(0 0 3px rgba(123,214,143,0.7)); }
+.pfg-wire-load{ stroke: var(--circuit); stroke-dasharray: 9 8; animation: pfgFlow 1.1s linear infinite; filter: drop-shadow(0 0 3px rgba(38,217,184,0.7)); }
+.pfg-wire-ev{ stroke: var(--sky-light); stroke-dasharray: 9 8; animation: pfgFlow 0.85s linear infinite; filter: drop-shadow(0 0 3px rgba(79,182,232,0.7)); }
 @keyframes pfgFlow{ to{ stroke-dashoffset: -34; } }
 
 @media (prefers-reduced-motion: reduce){
-  .pfg-fan-blade, .pfg-bulb-glass, .pfg-charger-led, .pfg-wire-solar, .pfg-wire-load, .pfg-wire-ev{ animation:none; }
+  .pfg-fan-blade, .pfg-bulb-glass, .pfg-screen, .pfg-charger-led, .pfg-sun, .pfg-wire-solar, .pfg-wire-load, .pfg-wire-ev{ animation:none; }
 }
 
 .scroll-cue{
@@ -464,16 +467,18 @@ section{ position:relative; }
 .partners-strip{ padding: 70px 0; }
 .partners-head{ text-align:center; max-width:560px; margin: 0 auto 44px; }
 .partners-head p{ color: var(--slate); margin-top:12px; }
-.partners-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:26px; align-items:stretch; }
+.partners-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:26px; }
 .partner-logo{
+  width:calc(25% - 19.5px);
   background:#fff; border:1px solid var(--line); border-radius: var(--radius-m);
   display:flex; align-items:center; justify-content:center; padding:36px;
   min-height:170px; transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
 }
 .partner-logo:hover{ box-shadow: var(--shadow-card); transform: translateY(-3px); border-color: rgba(63,166,91,0.35); }
 .partner-logo img{ max-height:108px; max-width:100%; object-fit:contain; }
-@media (max-width: 900px){ .partners-grid{ grid-template-columns: repeat(2,1fr); } .partner-logo{ min-height:150px; padding:28px; } .partner-logo img{ max-height:90px; } }
-@media (max-width: 560px){ .partners-grid{ grid-template-columns: repeat(1,1fr); } .partner-logo{ min-height:130px; padding:22px; } .partner-logo img{ max-height:74px; } }
+@media (max-width: 900px){ .partner-logo{ width:calc(33.333% - 17.33px); min-height:150px; padding:28px; } .partner-logo img{ max-height:90px; } }
+@media (max-width: 560px){ .partner-logo{ width:calc(50% - 13px); min-height:130px; padding:22px; } .partner-logo img{ max-height:74px; } }
+@media (max-width: 420px){ .partner-logo{ width:100%; } }
 
 /* ---------- CTA banner ---------- */
 .cta-banner{

@@ -44,64 +44,71 @@
   </div>
   <div class="hero-scrim"></div>
   <div class="power-flow-graphic" aria-hidden="true">
-    <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
       <!-- ground -->
-      <line x1="8" y1="332" x2="472" y2="332" class="pfg-ground"/>
+      <line x1="10" y1="372" x2="550" y2="372" class="pfg-ground"/>
 
       <!-- sun -->
-      <circle cx="58" cy="56" r="13" class="pfg-sun"/>
-      <line x1="58" y1="30" x2="58" y2="20" class="pfg-sun-ray"/>
-      <line x1="80" y1="40" x2="88" y2="32" class="pfg-sun-ray"/>
-      <line x1="36" y1="40" x2="28" y2="32" class="pfg-sun-ray"/>
+      <circle cx="70" cy="55" r="16" class="pfg-sun"/>
+      <line x1="70" y1="24" x2="70" y2="12" class="pfg-sun-ray"/>
+      <line x1="97" y1="36" x2="106" y2="27" class="pfg-sun-ray"/>
+      <line x1="43" y1="36" x2="34" y2="27" class="pfg-sun-ray"/>
+      <line x1="97" y1="74" x2="106" y2="83" class="pfg-sun-ray"/>
 
       <!-- house -->
-      <polygon points="25,195 110,110 195,195" class="pfg-roof"/>
-      <rect x="40" y="195" width="140" height="137" class="pfg-house"/>
-      <rect x="58" y="225" width="30" height="30" class="pfg-window"/>
-      <rect x="122" y="225" width="30" height="30" class="pfg-window"/>
-      <rect x="90" y="272" width="36" height="60" class="pfg-door"/>
+      <polygon points="25,215 140,110 240,215" class="pfg-roof"/>
+      <rect x="45" y="215" width="175" height="155" class="pfg-house"/>
+      <rect x="68" y="250" width="36" height="36" class="pfg-window"/>
+      <rect x="150" y="250" width="36" height="36" class="pfg-window"/>
+      <rect x="112" y="300" width="44" height="70" class="pfg-door"/>
 
       <!-- solar panels on roof slope -->
-      <g transform="translate(30,133) rotate(-40)">
-        <rect x="0" y="0" width="96" height="34" class="pfg-panel"/>
-        <line x1="24" y1="0" x2="24" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
-        <line x1="48" y1="0" x2="48" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
-        <line x1="72" y1="0" x2="72" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
-        <line x1="0" y1="17" x2="96" y2="17" style="stroke:var(--sky-light); stroke-width:1;"/>
+      <g transform="translate(38,168) rotate(-42)">
+        <rect x="0" y="0" width="140" height="46" class="pfg-panel"/>
+        <line x1="35" y1="0" x2="35" y2="46" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="70" y1="0" x2="70" y2="46" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="105" y1="0" x2="105" y2="46" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="0" y1="23" x2="140" y2="23" style="stroke:var(--sky-light); stroke-width:1;"/>
       </g>
 
       <!-- battery / inverter bank -->
-      <rect x="212" y="250" width="50" height="82" rx="6" class="pfg-batt-box"/>
-      <rect x="222" y="262" width="30" height="15" rx="2" class="pfg-batt-cell"/>
-      <rect x="222" y="283" width="30" height="15" rx="2" class="pfg-batt-cell" opacity="0.55"/>
+      <rect x="250" y="290" width="58" height="82" rx="6" class="pfg-batt-box"/>
+      <rect x="262" y="302" width="34" height="16" rx="2" class="pfg-batt-cell"/>
+      <rect x="262" y="324" width="34" height="16" rx="2" class="pfg-batt-cell" opacity="0.55"/>
 
-      <!-- lightbulb (home use) -->
-      <rect x="109" y="68" width="12" height="8" rx="2" class="pfg-bulb-base"/>
-      <circle cx="115" cy="55" r="14" class="pfg-bulb-glass"/>
+      <!-- lightbulb (home lighting) -->
+      <rect x="132" y="78" width="14" height="9" rx="2" class="pfg-bulb-base"/>
+      <circle cx="139" cy="63" r="16" class="pfg-bulb-glass"/>
 
-      <!-- fan (appliance use) -->
-      <circle cx="150" cy="68" r="8" class="pfg-fan-body"/>
+      <!-- fan (cooling) -->
+      <circle cx="185" cy="78" r="9" class="pfg-fan-body"/>
       <g class="pfg-fan-blade">
-        <line x1="150" y1="68" x2="150" y2="46"/>
-        <line x1="150" y1="68" x2="169" y2="79"/>
-        <line x1="150" y1="68" x2="131" y2="79"/>
+        <line x1="185" y1="78" x2="185" y2="54"/>
+        <line x1="185" y1="78" x2="207" y2="91"/>
+        <line x1="185" y1="78" x2="163" y2="91"/>
       </g>
 
+      <!-- screen / appliances (a third, distinct household use) -->
+      <rect x="300" y="240" width="42" height="30" rx="4" class="pfg-fan-body"/>
+      <rect x="306" y="246" width="30" height="18" rx="2" class="pfg-screen"/>
+      <rect x="316" y="271" width="10" height="6" class="pfg-screen-stand"/>
+
       <!-- EV charging post + car -->
-      <rect x="330" y="250" width="14" height="82" rx="3" class="pfg-charger-post"/>
-      <rect x="318" y="236" width="38" height="20" rx="5" class="pfg-charger-head"/>
-      <circle cx="337" cy="246" r="3" class="pfg-charger-led"/>
-      <rect x="368" y="304" width="80" height="26" rx="10" class="pfg-car-body"/>
-      <rect x="384" y="286" width="46" height="22" rx="8" class="pfg-car-cabin"/>
-      <circle cx="388" cy="330" r="9" class="pfg-car-wheel"/>
-      <circle cx="428" cy="330" r="9" class="pfg-car-wheel"/>
+      <rect x="390" y="290" width="16" height="82" rx="3" class="pfg-charger-post"/>
+      <rect x="376" y="274" width="44" height="22" rx="6" class="pfg-charger-head"/>
+      <circle cx="398" cy="285" r="3.5" class="pfg-charger-led"/>
+      <rect x="430" y="350" width="95" height="30" rx="12" class="pfg-car-body"/>
+      <rect x="450" y="330" width="54" height="26" rx="10" class="pfg-car-cabin"/>
+      <circle cx="452" cy="380" r="10" class="pfg-car-wheel"/>
+      <circle cx="498" cy="380" r="10" class="pfg-car-wheel"/>
 
       <!-- current flow -->
-      <path d="M140,150 C 190,150 200,210 235,250" class="pfg-wire pfg-wire-solar"/>
-      <path d="M215,250 C 190,190 150,110 115,76" class="pfg-wire pfg-wire-load"/>
-      <path d="M228,250 C 210,180 180,120 152,78" class="pfg-wire pfg-wire-load"/>
-      <path d="M260,290 C 290,290 300,280 330,270" class="pfg-wire pfg-wire-ev"/>
-      <path d="M356,248 C 368,255 372,270 378,300" class="pfg-wire pfg-wire-ev"/>
+      <path d="M170,175 C 220,175 235,240 279,290" class="pfg-wire pfg-wire-solar"/>
+      <path d="M262,290 C 230,220 180,120 139,87" class="pfg-wire pfg-wire-load"/>
+      <path d="M275,290 C 250,220 210,120 185,87" class="pfg-wire pfg-wire-load"/>
+      <path d="M300,300 C 310,290 314,280 318,271" class="pfg-wire pfg-wire-load"/>
+      <path d="M308,330 C 350,335 370,320 398,296" class="pfg-wire pfg-wire-ev"/>
+      <path d="M420,282 C 434,290 438,314 446,348" class="pfg-wire pfg-wire-ev"/>
     </svg>
   </div>
   <div class="container hero-inner">
@@ -266,15 +273,13 @@
       <h2 style="font-size:1.9rem;">Trusted by counties, hotels and industry leaders.</h2>
     </div>
     <div class="partners-grid reveal">
-      <div class="partner-logo"><img src="assets/partner-homabay.jpg" alt="County Government of Homa Bay"></div>
-      <div class="partner-logo"><img src="assets/partner-migori.jpg" alt="Migori County Government"></div>
       <div class="partner-logo"><img src="assets/partner-redington.jpg" alt="Redington"></div>
-      <div class="partner-logo"><img src="assets/partner-fonroche.jpg" alt="Fonroche Lighting"></div>
-      <div class="partner-logo"><img src="assets/partner-hthium.jpg" alt="Hthium"></div>
-      <div class="partner-logo"><img src="assets/partner-sentimental.jpg" alt="Sentimental Energy Company"></div>
-      <div class="partner-logo"><img src="assets/partner-hillpark.jpg" alt="Hillpark Hotels"></div>
-      <div class="partner-logo"><img src="assets/partner-pisu-hq.jpg" alt="Pisu & Co Ltd"></div>
+      <div class="partner-logo"><img src="assets/partner-homabay.jpg" alt="County Government of Homa Bay"></div>
+      <div class="partner-logo"><img src="assets/partner-migori-clear.jpg" alt="Migori County Government"></div>
       <div class="partner-logo"><img src="assets/partner-philips.jpg" alt="Philips"></div>
+      <div class="partner-logo"><img src="assets/partner-sentimental.jpg" alt="Sentimental Energy Company"></div>
+      <div class="partner-logo"><img src="assets/partner-fonroche.jpg" alt="Fonroche Lighting"></div>
+      <div class="partner-logo"><img src="assets/partner-pisu-hq.jpg" alt="Pisu & Co Ltd"></div>
     </div>
   </div>
 </section>
