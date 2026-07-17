@@ -43,7 +43,67 @@
     <div class="hero-slide" style="background-image:url('assets/hero-recycling-bins.jpg');"></div>
   </div>
   <div class="hero-scrim"></div>
-  <div class="loop-ring"></div>
+  <div class="power-flow-graphic" aria-hidden="true">
+    <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- ground -->
+      <line x1="8" y1="332" x2="472" y2="332" class="pfg-ground"/>
+
+      <!-- sun -->
+      <circle cx="58" cy="56" r="13" class="pfg-sun"/>
+      <line x1="58" y1="30" x2="58" y2="20" class="pfg-sun-ray"/>
+      <line x1="80" y1="40" x2="88" y2="32" class="pfg-sun-ray"/>
+      <line x1="36" y1="40" x2="28" y2="32" class="pfg-sun-ray"/>
+
+      <!-- house -->
+      <polygon points="25,195 110,110 195,195" class="pfg-roof"/>
+      <rect x="40" y="195" width="140" height="137" class="pfg-house"/>
+      <rect x="58" y="225" width="30" height="30" class="pfg-window"/>
+      <rect x="122" y="225" width="30" height="30" class="pfg-window"/>
+      <rect x="90" y="272" width="36" height="60" class="pfg-door"/>
+
+      <!-- solar panels on roof slope -->
+      <g transform="translate(30,133) rotate(-40)">
+        <rect x="0" y="0" width="96" height="34" class="pfg-panel"/>
+        <line x1="24" y1="0" x2="24" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="48" y1="0" x2="48" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="72" y1="0" x2="72" y2="34" style="stroke:var(--sky-light); stroke-width:1;"/>
+        <line x1="0" y1="17" x2="96" y2="17" style="stroke:var(--sky-light); stroke-width:1;"/>
+      </g>
+
+      <!-- battery / inverter bank -->
+      <rect x="212" y="250" width="50" height="82" rx="6" class="pfg-batt-box"/>
+      <rect x="222" y="262" width="30" height="15" rx="2" class="pfg-batt-cell"/>
+      <rect x="222" y="283" width="30" height="15" rx="2" class="pfg-batt-cell" opacity="0.55"/>
+
+      <!-- lightbulb (home use) -->
+      <rect x="109" y="68" width="12" height="8" rx="2" class="pfg-bulb-base"/>
+      <circle cx="115" cy="55" r="14" class="pfg-bulb-glass"/>
+
+      <!-- fan (appliance use) -->
+      <circle cx="150" cy="68" r="8" class="pfg-fan-body"/>
+      <g class="pfg-fan-blade">
+        <line x1="150" y1="68" x2="150" y2="46"/>
+        <line x1="150" y1="68" x2="169" y2="79"/>
+        <line x1="150" y1="68" x2="131" y2="79"/>
+      </g>
+
+      <!-- EV charging post + car -->
+      <rect x="330" y="250" width="14" height="82" rx="3" class="pfg-charger-post"/>
+      <rect x="318" y="236" width="38" height="20" rx="5" class="pfg-charger-head"/>
+      <circle cx="337" cy="246" r="3" class="pfg-charger-led"/>
+      <rect x="368" y="304" width="80" height="26" rx="10" class="pfg-car-body"/>
+      <rect x="384" y="286" width="46" height="22" rx="8" class="pfg-car-cabin"/>
+      <circle cx="388" cy="330" r="9" class="pfg-car-wheel"/>
+      <circle cx="428" cy="330" r="9" class="pfg-car-wheel"/>
+
+      <!-- current flow -->
+      <path d="M140,150 C 190,150 200,210 235,250" class="pfg-wire pfg-wire-solar"/>
+      <path d="M215,250 C 190,190 150,110 115,76" class="pfg-wire pfg-wire-load"/>
+      <path d="M228,250 C 210,180 180,120 152,78" class="pfg-wire pfg-wire-load"/>
+      <path d="M260,290 C 290,290 300,280 330,270" class="pfg-wire pfg-wire-ev"/>
+      <path d="M356,248 C 368,255 372,270 378,300" class="pfg-wire pfg-wire-ev"/>
+    </svg>
+  </div>
   <div class="container hero-inner">
     <div class="hero-logo-feature">
       <img src="assets/sarufi-logo.png" alt="Sarufi Energy Group logo">
@@ -175,7 +235,7 @@
         <div class="vc-txt"><div class="n">01</div><h4>Integrity</h4></div>
       </div>
       <div class="value-card">
-        <img src="assets/gears-teamwork.jpg" alt="Team Work">
+        <img src="assets/teamwork-gears-hands.jpg" alt="Team Work">
         <div class="vc-scrim"></div>
         <div class="vc-txt"><div class="n">02</div><h4>Team Work</h4></div>
       </div>
@@ -207,6 +267,7 @@
     </div>
     <div class="partners-grid reveal">
       <div class="partner-logo"><img src="assets/partner-homabay.jpg" alt="County Government of Homa Bay"></div>
+      <div class="partner-logo"><img src="assets/partner-migori.jpg" alt="Migori County Government"></div>
       <div class="partner-logo"><img src="assets/partner-redington.jpg" alt="Redington"></div>
       <div class="partner-logo"><img src="assets/partner-fonroche.jpg" alt="Fonroche Lighting"></div>
       <div class="partner-logo"><img src="assets/partner-hthium.jpg" alt="Hthium"></div>

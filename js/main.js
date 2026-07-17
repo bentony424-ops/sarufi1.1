@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Current year ---- */
   document.querySelectorAll('.cur-year').forEach(el => el.textContent = new Date().getFullYear());
 
-  /* ---- Hero image carousel (auto-rotate, robust hover-pause, random transitions, manual dots) ---- */
+  /* ---- Hero image carousel (auto-rotate, pauses only while hovering the top nav bar, random transitions, manual dots) ---- */
   const heroEl = document.querySelector('#heroCarousel');
   if (heroEl) {
     const slides = heroEl.querySelectorAll('.hero-slide');
@@ -109,9 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
       dots[current].classList.add('active');
     };
 
-    // Reliable pointer-based hover tracking (works better than mouseenter/leave across scroll/touch)
-    heroEl.addEventListener('pointerenter', () => { hovering = true; });
-    heroEl.addEventListener('pointerleave', () => { hovering = false; lastTick = performance.now(); });
+    // Pause only while the cursor is over the top nav bar (not the whole hero —
+    // that was the bug: the hero fills the entire screen, so the old listener
+    // paused the rotation almost permanently since the cursor was nearly always "inside" it).
+    const navBar = document.querySelector('.site-nav');
+    if (navBar) {
+      navBar.addEventListener('pointerenter', () => { hovering = true; });
+      navBar.addEventListener('pointerleave', () => { hovering = false; lastTick = performance.now(); });
+    }
 
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
